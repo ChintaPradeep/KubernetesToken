@@ -1,0 +1,13 @@
+on master
+-------------
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+
+
+
+On node 
+----------
+kubeadm join 172.31.17.126:6443 --token auanx0.rnrwrj12cim5dq99 \
+        --discovery-token-ca-cert-hash sha256:ffeb9956b5b580701e31d2278d201e9b1e6729056b3dfd8f7ff07e59ca6875d3
